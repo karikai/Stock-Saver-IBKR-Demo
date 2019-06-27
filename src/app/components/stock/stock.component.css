@@ -1,0 +1,13 @@
+#stock-details {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background: white;
+    width: 90%;
+    margin: auto;
+    margin-top: 25%;
+    border: #afafaf 2px solid;
+}
+
+#stock-details > h1 {
+    text-align: center;
+}

@@ -1,0 +1,21 @@
+<div *ngIf="isLoaded" class="double-pane-container">
+    <div class="stock-info">
+        <h1>{{ stock.companyName }}</h1>
+        <h1>{{ stock.symbol }}</h1>
+        <div id="stock-details">
+            <!-- <h1>Price: {{ stock.latestPrice }}</h1>
+            <h1>High: {{ stock.high }}</h1>
+            <h1>Low: {{ stock.low }}</h1> -->
+            <h1>P/E Ratio: {{ stock.peRatio }}</h1>
+            <h1>Market Cap: {{ stock.marketCap | shortNumber }}</h1>
+            <h1>Volume: {{ stock.latestVolume | shortNumber }}</h1>
+            <h1>YTD Change: {{ stock.ytdChange | percent }}</h1>
+            <h1>52 Week High: {{ stock.week52High }}</h1>
+            <h1>52 Week Low: {{ stock.week52Low }}</h1>
+        </div>
+    </div>
+
+    <div class="stock-graph">
+        <canvas id="yourCavasId" width="400" height="400">{{ mychart }}</canvas>
+    </div>
+</div>
