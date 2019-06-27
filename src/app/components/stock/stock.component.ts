@@ -96,18 +96,21 @@ export class StockComponent implements OnInit {
 
   constructor(private stockFetch: StockFetcherService, private activatedRoute: ActivatedRoute) {
     this.stockSymbol = this.activatedRoute.snapshot.paramMap.get("symbol");
-    this.stockFetch.getStock(this.stockSymbol).then((stock) => {
-      this.stock = stock;
-      if (stock) {
-        this.isStockValid = true;
-        this.getChartData('5d').then(() => {
-          this.chartInitialize();
-        });
+    this.stockFetch.doesStockExist(this.stockSymbol).then((resp) => {
+      if (resp) {
+        this.stockFetch.getStock(this.stockSymbol).then((stock) => {
+          this.stock = stock;
+          this.isStockValid = true;
+          this.getChartData('5d').then(() => {
+            this.chartInitialize();
+          });
+
+          this.isLoaded = true;
+        })
       } else {
         this.isStockValid = false;
-        document.getElementsByTagName('html')[0].style.height = '0%';
+        this.isLoaded = true;
       }
-      this.isLoaded = true;
     })
   }
   

@@ -23,3 +23,15 @@
     font-size: 2em;
     vertical-align: top;
 }
+
+@media only screen and (max-width: 600px) {
+    #add-user {
+        position: absolute;
+        bottom: 5%;
+    }
+
+    .input-container > p {
+        text-align: center;
+    }
+
+}

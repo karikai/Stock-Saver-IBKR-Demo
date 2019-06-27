@@ -70,3 +70,39 @@
     margin: auto;
     justify-content: space-between;
 }
+
+@media only screen and (max-width: 600px) {
+    .double-pane-container {
+        display: block;
+        width: 100%;
+        height: 100%;
+    }
+
+    .double-pane-container > div {
+        width: 100%;
+        height: 100%;
+    }
+    
+    #back {
+        top: 5%;
+    }
+
+    #stock-details {
+        grid-template-columns: 1fr;
+    }
+
+    #stock-prices > h2 {
+        text-align: center;
+    }
+
+    #button-container {
+        display: block;
+    }
+
+    #button-container > button {
+        width: 65%;
+        padding: 2%;
+        margin: 20% auto !important;
+        display: block;
+    }
+}
