@@ -15,13 +15,24 @@ export class StockFetcherService {
     })
   }
 
+  getHistoricalPrices(symbol: string, range: string) {
+    return new Promise((resolve) => {
+      this.http.get('https://cloud.iexapis.com/stable/stock/' + symbol + '/chart/' + range + '/quote?token=pk_c37812d235954d52b6089fe8ecf50261').subscribe((resp) => {
+        console.log(resp)
+        resolve(resp)
+      })
+    })
+  }
+
   // Checks whether or not stock exist
   doesStockExist(symbol) {
     return new Promise((resolve) => {
-      this.http.get('https://cloud.iexapis.com/stable/stock/' + symbol + '/quote?token=pk_c37812d235954d52b6089fe8ecf50261').subscribe((resp) => {
+      this.http.get('https://cloud.iexapis.com/stable/stock/' + symbol + '/quote?token=pk_c37812d235954d52b6089fe8ecf50261').subscribe(resp => {
         if (resp) {
           resolve(true);
-        } else {
+        }
+      }, err => {
+        if (err) {
           resolve(false);
         }
       })

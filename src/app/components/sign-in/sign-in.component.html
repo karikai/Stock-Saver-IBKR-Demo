@@ -1,8 +1,16 @@
 <div class="input-container">
     <h1>Symbol Checker</h1>
     <p>Email</p>
-    <input type="text" id="">
+    <input type="text" [(ngModel)]="email">
     <p>Password</p>
-    <input type="text" id="">
-    <button>Sign In</button>
+    <input type="password" [(ngModel)]="password">
+    <div *ngIf="wrongPassword">
+        <p class="warning">Wrong Password or Email</p>
+    </div>
+    <button (click)="signInVerification()">Sign In</button>
 </div>
+
+<span (click)="redirectToSignUp()" id="add-user">
+    <i class="fas fa-user-plus"></i>
+    <p>Create a new user</p>
+</span>

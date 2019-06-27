@@ -9,9 +9,24 @@ export class UserAuthService {
   authRef = this.afa.authState;
   createUserRef = this.afa.auth.createUserWithEmailAndPassword;
 
+  signIn(email, password) {
+    return new Promise((resolve) => {
+      this.afa.auth.signInWithEmailAndPassword(email, password).then(()=> {
+        resolve(true)
+      })
+    })
+  }
+
+  signOut() {
+    this.afa.auth.signOut();
+  }
+
   createUser(email: string, password: string) {
-    this.createUserRef(email, password).then((newUser) => {
-      this.stockList.createUserData(newUser.user.uid, email)
+    return new Promise((resolve)=>{
+      this.afa.auth.createUserWithEmailAndPassword(email, password).then((newUser) => {
+        this.stockList.createUserData(newUser.user.uid, email)
+        resolve(newUser.user.uid);
+      })
     })
   }
   

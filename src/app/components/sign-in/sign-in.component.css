@@ -1,3 +1,25 @@
 .input-container {
     margin-top: 18%;
 }
+
+#add-user {
+    position: absolute;
+    bottom: 5%;
+    left: 5%;
+    display: flex;
+    color: #00b9ff;
+}
+
+#add-user:hover {
+    color: #a2e6ff;
+    cursor: pointer;
+}
+
+#add-user > i {
+    font-size: 4em;
+}
+
+#add-user > p {
+    font-size: 2em;
+    vertical-align: top;
+}

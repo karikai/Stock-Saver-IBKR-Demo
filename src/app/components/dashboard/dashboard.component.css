@@ -8,6 +8,7 @@
     width: 30%;
     background: #004B67;
     border-right: #e2e2e2 2px solid;
+    overflow: auto;
 }
 
 #stocks > h1 {
@@ -39,4 +40,31 @@
 #price {
     text-align: right;
     padding-right: 2%;
+}
+
+#sign-out {
+    position: absolute;
+    bottom: 2.5%;
+    right: 5%;
+    display: flex;
+    color: #00b9ff;
+}
+
+#sign-out:hover {
+    color: #a2e6ff;
+    cursor: pointer;
+}
+
+#sign-out > i {
+    font-size: 4em;
+}
+
+#sign-out > p {
+    font-size: 2em;
+    vertical-align: top;
+}
+
+#empty-stocks {
+    text-align: center;
+    color: #c7c7c7;
 }

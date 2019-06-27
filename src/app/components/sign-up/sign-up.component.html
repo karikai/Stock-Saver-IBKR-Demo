@@ -9,11 +9,16 @@
     <div class="input-container">
         <h1>Symbol Checker</h1>
         <p>Email</p>
-        <input type="text" id="">
+        <input type="text" [(ngModel)]="email">
         <p>Password</p>
-        <input type="text" id="">
+        <input type="password" [(ngModel)]="password">
         <p>Confirm Password</p>
-        <input type="text" id="">
-        <button>Sign Up</button>
+        <input type="password" [(ngModel)]="rePassword">
+        <div *ngIf="!validCredentials">
+                <p class="warning">You must enter the right credentials to sign up.</p>
+        </div>
+        <button (click)="secureSignUp()">Sign Up</button>
     </div>
+
 </div>
+<span (click)="redirectToHome()" id="back"><i class="fas fa-arrow-alt-circle-left"></i></span>

@@ -24,3 +24,25 @@
 .input-container {
     margin-top: 12%;
 }
+
+#back {
+    position: absolute;
+    bottom: 2.5%;
+    right: 5%;
+    display: flex;
+    color: #00b9ff;
+}
+
+#back:hover {
+    color: #a2e6ff;
+    cursor: pointer;
+}
+
+#back > i {
+    font-size: 4em;
+}
+
+#back > p {
+    font-size: 2em;
+    vertical-align: top;
+}

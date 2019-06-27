@@ -1,14 +1,26 @@
-<div id="dashboard-container">
+<div *ngIf="isLoaded" id="dashboard-container">
     <div id="stocks">
         <h1>Stocks</h1>
-        <div id="stock-item">
-            <p id="symbol">Apple (APPL)</p>
-            <p id="price">143.42</p>
+        <div *ngIf="user.symbols.length === 0">
+            <p id="empty-stocks">Please add a symbol to your list.</p>
+        </div>
+        <div *ngIf="user.symbols.length > 0">
+            <div *ngFor="let stock of symbolList">
+                <app-stock-item [stockName]="stock.stockName" [stockPrice]="stock.stockPrice" [stockSymbol]="stock.stockSymbol"></app-stock-item>
+            </div>
         </div>
     </div>
     <div class="input-container">
         <h1>Enter a Stock Symbol</h1>
-        <input type="text" name="" id="">
-        <button>Submit</button>
+        <input type="text" [(ngModel)]="symbolName">
+        <div *ngIf="invalidStock">
+                <p class="warning">The stock you entered does not exist</p>
+        </div>
+        <div class="double-button">
+            <button (click)="addStock()">Add</button>
+            <button (click)="searchStock(symbolName)">View</button>
+        </div>
     </div>
+
+    <span (click)="signOut()" id="sign-out"><i class="fas fa-sign-out-alt"></i> <p>Sign Out</p></span>
 </div>

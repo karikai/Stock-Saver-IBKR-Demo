@@ -11,3 +11,62 @@
 #stock-details > h1 {
     text-align: center;
 }
+
+.stock-graph {
+    display: grid;
+    grid-template-rows: 20% 80%;
+}
+
+#stock-prices {
+    display: flex;
+    margin: auto;
+    width: 50%;
+    justify-content: space-around;
+}
+
+#stock-prices > h1 {
+    font-size: 2.5em;
+}
+
+#stock-prices > h2 {
+    font-size: 2em;
+}
+
+.warning {
+    font-size: 4em;
+    margin-top: 20% !important;
+}
+
+#back {
+    position: absolute;
+    bottom: 2.5%;
+    left: 5%;
+    display: flex;
+    color: #00b9ff;
+}
+
+#back:hover {
+    color: #a2e6ff;
+    cursor: pointer;
+}
+
+#back > i {
+    font-size: 4em;
+}
+
+#back > p {
+    font-size: 2em;
+    vertical-align: top;
+}
+
+#empty-stocks {
+    text-align: center;
+    color: #c7c7c7;
+}
+
+#button-container {
+    display: flex;
+    width: 50%;
+    margin: auto;
+    justify-content: space-between;
+}
